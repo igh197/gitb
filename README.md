@@ -4,8 +4,9 @@
 <br><img src="https://s3.ap-northeast-2.amazonaws.com/img.kormedi.com/news/article/__icsFiles/artimage/2015/05/23/c_km601/432212_540.jpg"/><br>
 I'm going to use <br>
 -MySQL(DBMS)<br>
--Springboot<br>  <img src="https://images.velog.io/images/galaxy/post/b501f325-1810-4e26-962e-e66ca0b94ca9/image.png"/>
+-Springboot<br>  
 -AWS EC2<br>
 -Vue.js<br>
 
 
+<img src="https://images.velog.io/images/galaxy/post/b501f325-1810-4e26-962e-e66ca0b94ca9/image.png"/>
