@@ -1,7 +1,7 @@
 **Personal Favorite Restaurants Website**
 ----
   Returns json data about my favorite restaurants in Seoul.
- **Restaurants**
+ <br>**Restaurants**
 | METHOD | URL                                       |
 |--------|-------------------------------------------|
 | POST   | https://127.0.0.1:8080/restaurants/create |
