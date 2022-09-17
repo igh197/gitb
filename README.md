@@ -52,7 +52,7 @@ Restaurant Class:
 | createdAt | LocalDateTime | created date and time of restaurant |
 | updatedAt | LocalDateTime | updated date and time of restaurant |
 | descrition | String | information about restaurant |
-| member | Member | Foreign key related to Member class which is many to one relation |
+| user | User | Foreign key related to Member class which is many to one relation |
 
 
 
