@@ -4,7 +4,7 @@
  <br>**Restaurants**
 | METHOD | URL                                       |
 |--------|-------------------------------------------|
-| POST   | https://127.0.0.1:8080/restaurants/create |
+| POST   | https://127.0.0.1:8080/restaurants/new    |
 | GET    | https://127.0.0.1:8080/restaurants        |
 | GET    | https://127.0.0.1:8080/restaurant/{id}    |
 | PUT    | https://127.0.0.1:8080/restaurant/{id}    |
@@ -13,7 +13,7 @@
 **Users**
 | METHOD | URL                                |
 | ------ | :--------------------------------- |
-| POST   | https://127.0.0.1:8080/user/create |
+| POST   | https://127.0.0.1:8080/user/new    |
 | GET    | https://127.0.0.1:8080/users       |
 | GET    | https://127.0.0.1:8080/user/{id}   |
 | PUT    | https://127.0.0.1:8080/user/{id}   |
