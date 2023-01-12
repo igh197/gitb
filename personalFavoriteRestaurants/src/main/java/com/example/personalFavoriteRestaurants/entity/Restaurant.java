@@ -1,16 +1,16 @@
 package com.example.personalFavoriteRestaurants.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
-import java.awt.*;
+
 import java.io.File;
-import java.sql.Blob;
+
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-
+@Setter
+@Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +18,7 @@ import java.time.LocalTime;
 public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     private String name;
     
@@ -37,8 +37,9 @@ public class Restaurant {
     private LocalDateTime updatedAt;
 
     private String description;
-
+    @JsonIgnore
     @ManyToOne
     private User user;
+
 
 }
