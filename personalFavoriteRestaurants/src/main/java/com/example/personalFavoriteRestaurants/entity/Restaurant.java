@@ -2,6 +2,7 @@ package com.example.personalFavoriteRestaurants.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
@@ -9,11 +10,12 @@ import java.io.File;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-@Setter
-@Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Accessors(chain = true)
+@Getter
+@Setter
 @Entity
 public class Restaurant {
     @Id
@@ -26,9 +28,9 @@ public class Restaurant {
 
     private String address;
 
-    private LocalTime openTime;
+    private String openTime;
 
-    private LocalTime closeTime;
+    private String closeTime;
 
     private File logo;
 

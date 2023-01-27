@@ -31,9 +31,9 @@ public class SecurityConfig{
             Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/login.html","/api/restaurants","/api/restaurant/{id}").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/user/new").permitAll()
-                .antMatchers(HttpMethod.PATCH,"/api/user/{id}").permitAll()
+                .antMatchers(HttpMethod.GET,"/login.html","/restaurants.html","/restaurants","/restaurant/{id}","/signup.html","/user/{id}").permitAll()
+                .antMatchers(HttpMethod.POST, "/user/new","/restaurant/new").permitAll()
+                .antMatchers(HttpMethod.PATCH,"/user/{id}").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -41,10 +41,7 @@ public class SecurityConfig{
                 .usernameParameter("account")
                 .passwordParameter("password")
                 .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/api/restaurants")
-
-
-                 //세션 날리기
+                .defaultSuccessUrl("/restaurants")
                 .and()
                 .exceptionHandling()
                 .accessDeniedPage("/login.html")

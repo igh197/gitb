@@ -1,30 +1,34 @@
 package com.example.personalFavoriteRestaurants.controller;
 
 
+import com.example.personalFavoriteRestaurants.entity.Restaurant;
 import com.example.personalFavoriteRestaurants.entity.network.RestaurantRequest;
 import com.example.personalFavoriteRestaurants.entity.network.RestaurantResponse;
+import com.example.personalFavoriteRestaurants.repository.RestaurantRepository;
 import com.example.personalFavoriteRestaurants.service.RestaurantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RequiredArgsConstructor
-@RestController
-@RequestMapping("/api")
+@Controller
 public class RestaurantController {
     private final RestaurantService restaurantService;
+    private final RestaurantRepository restaurantRepository;
     @GetMapping("/restaurants")
-    public List<RestaurantResponse> search(@PageableDefault Pageable pageable){
-
-        return restaurantService.search(pageable);
+    public String search(@PageableDefault Pageable pageable, Model model){
+        model.addAttribute("restaurants",restaurantRepository.findAll());
+        return "restaurants";
     }
 
-    @PostMapping("/restaurants/new")
-    public RestaurantResponse create(@RequestBody RestaurantRequest restaurantRequest){
+    @PostMapping(value = "/restaurant/new")
+    public Restaurant create(@ModelAttribute RestaurantRequest restaurantRequest){
         return restaurantService.create(restaurantRequest);
     }
     @GetMapping("/restaurant/{id}")
