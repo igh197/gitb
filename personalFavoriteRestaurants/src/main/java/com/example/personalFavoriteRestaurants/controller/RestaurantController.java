@@ -24,16 +24,19 @@ public class RestaurantController {
     @GetMapping("/restaurants")
     public String search(@PageableDefault Pageable pageable, Model model){
         model.addAttribute("restaurants",restaurantRepository.findAll());
-        return "restaurants";
+        return "/restaurants";
     }
 
     @PostMapping(value = "/restaurant/new")
-    public Restaurant create(@ModelAttribute RestaurantRequest restaurantRequest){
-        return restaurantService.create(restaurantRequest);
+    public String create(@ModelAttribute RestaurantRequest restaurantRequest,Model model){
+        restaurantService.create(restaurantRequest);
+        return "/restaurants";
     }
     @GetMapping("/restaurant/{id}")
-    public RestaurantResponse read(@PathVariable Long id){
-        return restaurantService.read(id);
+    public String read(@PathVariable Long id,Model model){
+        model.addAttribute("restaurant",restaurantRepository.findRestaurantById(id));
+        restaurantService.read(id);
+        return "/restaurant";
     }
     @PutMapping("/restaurant/{id}")
     public void update(@PathVariable Long id,RestaurantRequest restaurantRequest){

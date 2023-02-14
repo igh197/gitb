@@ -6,8 +6,10 @@ import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
+import java.awt.*;
 import java.io.File;
 
+import java.sql.Blob;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 @Builder
