@@ -34,7 +34,9 @@ public class Restaurant {
 
     private String closeTime;
 
-    private File logo;
+    @Lob
+    @Column(columnDefinition="BLOB")
+    private byte[] logo;
 
     private LocalDateTime createdAt;
 

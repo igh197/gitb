@@ -7,6 +7,7 @@ import com.example.personalFavoriteRestaurants.entity.network.RestaurantResponse
 import com.example.personalFavoriteRestaurants.repository.RestaurantRepository;
 import com.example.personalFavoriteRestaurants.service.RestaurantService;
 import lombok.RequiredArgsConstructor;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 
@@ -14,6 +15,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.awt.*;
+import java.io.*;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -28,7 +33,7 @@ public class RestaurantController {
     }
 
     @PostMapping(value = "/restaurant/new")
-    public String create(@ModelAttribute RestaurantRequest restaurantRequest,Model model){
+    public String create(@ModelAttribute RestaurantRequest restaurantRequest){
         restaurantService.create(restaurantRequest);
         return "/restaurants";
     }
@@ -46,4 +51,7 @@ public class RestaurantController {
     public void delete(@PathVariable Long id){
         restaurantService.delete(id);
     }
+
+
+
 }
