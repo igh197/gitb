@@ -23,7 +23,7 @@ public class UserController {
 
 
     @PostMapping("/user/new")
-    public User save(@RequestBody UserRequest userRequest) {
+    public User save(@ModelAttribute UserRequest userRequest) {
         return userService.save(userRequest);
     }
 

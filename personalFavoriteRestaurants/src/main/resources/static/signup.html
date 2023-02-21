@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign up</title>
+    <style>
+        form,div {
+            background: #3dd5f3 ;
+            max-width: 330px;
+            padding: 15px;
+            text-align: -webkit-right;
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        body{
+            background-color: #ffecb5;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+        input{margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;}
+    </style>
+</head>
+<body>
+<h1>Sign Up</h1> <hr>
+
+<form action="user/new" method="POST">
+    account : <input type="text" name="account"> <br>
+    name : <input type="text" name="name"> <br>
+    email : <input type="text" name="email"> <br>
+    password : <input type="password" name="password"> <br>
+    <input type="radio" name="auth" value="ROLE_ADMIN,ROLE_USER"> admin
+    <input type="radio" name="auth" value="ROLE_USER" checked="checked"> user <br>
+    <button type="submit">Join</button>
+</form> <br>
+
+<a href="/login.html">Go to login →</a>
+</body>

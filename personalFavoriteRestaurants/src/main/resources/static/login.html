@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Log In</title>
+    <style>
+        form,div {
+            background: #3dd5f3 ;
+            max-width: 330px;
+            padding: 15px;
+            text-align: -webkit-right;
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        body{
+            background-color: #ffecb5;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+        input{margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;}
+    </style>
+</head>
+<body>
+<h1>Log In</h1>
+
+<form action="/login" method="POST">
+    <div>
+        account : <input type="text" name="account"> <br>
+        password : <input type="password" name="password"> <br>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+    </div>
+</form> <br>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Detail</title>
+</head>
+<body>
+{{#restaurant}}
+    name: {{restaurant.name}}<br>
+    category: {{restaurant.category}}<br>
+    address: {{restaurant.address}}<br>
+    open: {{restaurant.openTime}}<br>
+    close: {{restaurant.closeTime}}<br>
+    description:{{restaurant.description}}<br>
+{{/restaurant}}
+{{#restaurantLogo}}
+    <img alt="" src="c:/Users/Documents/{{restaurantLogo.logoUrl}}"/>
+{{/restaurantLogo}}
+</body>
+</html>

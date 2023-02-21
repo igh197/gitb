@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant List</title>
+</head>
+<body>
+{{#restaurants}}
+    <div>
+        <a href="/restaurant/{{id}}">
+
+            <h2>{{name}}</h2>
+            <h2>{{description}}</h2>
+        </a>
+    </div>
+{{/restaurants}}
+
+<script src="js/ajax.js">
+
+</script>
+</body>
+</html>

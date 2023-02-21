@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sign up</title>
+  <style>
+    form,div {
+      background: #3dd5f3 ;
+      max-width: 330px;
+      padding: 15px;
+      text-align: -webkit-right;
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    body{
+      background-color: #ffecb5;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+    input{margin-bottom: -1px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;}
+  </style>
+</head>
+<body>
+<h1>Register</h1> <hr>
+
+<form action="/restaurant/new" method="POST" >
+  name : <input type="text" name="name"> <br>
+  category : <input type="text" name="category"><br>
+  address : <input type="text" name="address"> <br>
+  open time : <input type="text" name="openTime"><br>
+  close time : <input type="text" name="closeTime"><br>
+  <form method="post" action="restaurant/img"  enctype="multipart/form-data">
+    logo : <input type="file" name="logo"><br>
+    <button type="button">Join</button>
+  </form>
+  description : <textarea name="description"></textarea>
+  <button type="submit">Join</button>
+</form>
+
+<a href="/login.html">Go to login →</a>
+</body>
+</html>
